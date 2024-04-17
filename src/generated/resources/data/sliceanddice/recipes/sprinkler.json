@@ -8,7 +8,7 @@
       "item": "create:fluid_pipe"
     },
     "S": {
-      "tag": "c:plates/copper"
+      "tag": "c:copper_plates"
     }
   },
   "pattern": [
