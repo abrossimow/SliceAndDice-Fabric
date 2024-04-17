@@ -1,0 +1,17 @@
+{
+  "block.sliceanddice.fertilizer": "Fertilizante líquido",
+  "block.sliceanddice.slicer": "Rebanador",
+  "block.sliceanddice.sprinkler": "Regador",
+  "block.sliceanddice.wet_air": "Aire húmedo",
+  "fluid.sliceanddice.fertilizer": "Fertilizante líquido",
+  "item.sliceanddice.fertilizer_bucket": "Cubo de Fertilizante Líquido",
+  "sliceanddice.gui.contraptions.wrong_direction": "Parece que este %s está rotando en la _dirección incorrecta_.",
+  "sliceanddice.ponder.slicer.header": "Cortando con el rebanador",
+  "sliceanddice.ponder.slicer.text_1": "Haz clic derecho en él con una herramienta válida",
+  "sliceanddice.ponder.slicer.text_2": "El rebanador también puede operar en una pileta",
+  "sliceanddice.ponder.sprinkler/intro.header": "Rociando por encima",
+  "sliceanddice.ponder.sprinkler/intro.text_1": "Coloca un regador debajo de una tubería",
+  "sliceanddice.ponder.sprinkler/uses.header": "Tipos de rociadores",
+  "sliceanddice.ponder.sprinkler/uses.text_1": "Diferentes fluidos también afectan a las entidades de manera diferente",
+  "sliceanddice.tooltip.rotationDirection": "Dirección de Rotación"  
+}
