@@ -1,12 +1,12 @@
 package com.possible_triangle.sliceanddice.compat
 
-import com.nhoryzon.mc.farmersdelight.registry.ItemsRegistry
 import com.possible_triangle.sliceanddice.SliceAndDice
 import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.Items
 import net.minecraft.world.item.crafting.Recipe
 import net.minecraft.world.level.ItemLike
+import vectorwing.farmersdelight.common.registry.ModItems
 import java.util.function.BiConsumer
 
 interface IRecipeInjector {
@@ -33,7 +33,7 @@ object ModCompat : IRecipeInjector {
 
     val exampleTool
         get(): ItemLike {
-            return ifLoaded(FARMERS_DELIGHT) { ItemsRegistry.IRON_KNIFE.get() } ?: Items.IRON_AXE
+            return ifLoaded(FARMERS_DELIGHT) { ModItems.IRON_KNIFE.get() } ?: Items.IRON_AXE
         }
 
     val exampleInput
@@ -43,7 +43,7 @@ object ModCompat : IRecipeInjector {
 
     val exampleOutput
         get(): ItemLike {
-            return ifLoaded(FARMERS_DELIGHT) { ItemsRegistry.CAKE_SLICE.get() } ?: Items.STRIPPED_BIRCH_LOG
+            return ifLoaded(FARMERS_DELIGHT) { ModItems.CAKE_SLICE.get() } ?: Items.STRIPPED_BIRCH_LOG
         }
 
 }
