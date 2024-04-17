@@ -1,8 +1,5 @@
 package com.possible_triangle.sliceanddice.compat
 
-import com.nhoryzon.mc.farmersdelight.integration.rei.FarmersDelightModREI
-import com.nhoryzon.mc.farmersdelight.recipe.CookingPotRecipe
-import com.nhoryzon.mc.farmersdelight.recipe.CuttingBoardRecipe
 import com.possible_triangle.sliceanddice.Content
 import com.possible_triangle.sliceanddice.SliceAndDice
 import com.possible_triangle.sliceanddice.config.Configs
@@ -15,6 +12,9 @@ import me.shedaniel.rei.api.common.util.EntryStacks
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.crafting.Ingredient
 import net.minecraft.world.item.crafting.Recipe
+import vectorwing.farmersdelight.common.crafting.CookingPotRecipe
+import vectorwing.farmersdelight.common.crafting.CuttingBoardRecipe
+import vectorwing.farmersdelight.integration.rei.REICategoryIdentifiers
 import java.util.function.BiConsumer
 
 private fun CuttingBoardRecipe.toBasin(): CuttingProcessingRecipe {
@@ -38,7 +38,7 @@ class FarmersDelightCompat private constructor() : IRecipeInjector {
     }
 
     fun addCatalysts(registration: CategoryRegistry) {
-        registration.addWorkstations(FarmersDelightModREI.CUTTING, EntryStacks.of(Content.SLICER_BLOCK.get()))
+        registration.addWorkstations(REICategoryIdentifiers.CUTTING, EntryStacks.of(Content.SLICER_BLOCK.get()))
     }
 
     private fun shouldConvert(key: ResourceLocation): Boolean {
@@ -91,8 +91,8 @@ class FarmersDelightCompat private constructor() : IRecipeInjector {
                 builder.require(ingredient)
             }
 
-            if (recipe.container != null && !recipe.container.isEmpty) {
-                builder.require(Ingredient.of(recipe.container))
+            if (recipe.outputContainer != null && !recipe.outputContainer.isEmpty) {
+                builder.require(Ingredient.of(recipe.outputContainer))
             }
 
             @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
