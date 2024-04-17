@@ -82,6 +82,13 @@ repositories {
             includeGroup("top.theillusivec4.curios")
         }
     }
+
+    maven {
+        url = uri("https://maven.greenhouseteam.dev/releases/")
+        content {
+            includeGroup("vectorwing")
+        }
+    }
 }
 
 mod {
@@ -105,27 +112,27 @@ dependencies {
 
     modApi("com.simibubi.create:create-fabric-${mc_version}:${create_version}")
 
-    modApi("curse.maven:farmers-delight-482834:${farmers_delight_version}")
+    modApi("vectorwing:FarmersDelight:${farmers_delight_version}") {
+        exclude(group = "net.fabricmc")
+    }
 
     modCompileOnly("dev.latvian.mods:kubejs-forge:${kubejs_version}")
 }
 
 enablePublishing {
-    repositories {
-        githubPackages(project)
-    }
+    githubPackages()
 }
 
 uploadToCurseforge {
     dependencies {
         required("create-fabric")
-        optional("farmers-delight-fabric")
+        optional("farmers-delight-refabricated")
     }
 }
 
 uploadToModrinth {
     dependencies {
         required("Xbc0uyRg")
-        optional("4EakbH8e")
+        optional("7vxePowz")
     }
 }
