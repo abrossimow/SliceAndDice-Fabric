@@ -1,5 +1,7 @@
 package com.possible_triangle.sliceanddice.mixins;
 
+import com.google.common.base.Supplier;
+import com.google.common.base.Suppliers;
 import com.possible_triangle.sliceanddice.compat.ModCompat;
 import com.simibubi.create.content.contraptions.actors.harvester.HarvesterMovementBehaviour;
 import net.minecraft.world.item.ItemStack;
@@ -13,7 +15,9 @@ import vectorwing.farmersdelight.common.registry.ModItems;
 public class HarvesterMovementBehaviourMixin {
 
     @Unique
-    private static final ItemStack sliceanddice$TOOL = ModCompat.INSTANCE.ifLoaded(ModCompat.FARMERS_DELIGHT, () -> new ItemStack(ModItems.IRON_KNIFE.get()));
+    private static final Supplier<ItemStack> sliceanddice$TOOL = Suppliers.memoize(() -> {
+        return ModCompat.INSTANCE.ifLoaded(ModCompat.FARMERS_DELIGHT, () -> new ItemStack(ModItems.IRON_KNIFE.get()));
+    });
 
     @ModifyVariable(
             require = 0,
@@ -21,7 +25,8 @@ public class HarvesterMovementBehaviourMixin {
             at = @At("STORE")
     )
     private ItemStack overwriteDefaultItem(ItemStack stack) {
-        if (sliceanddice$TOOL != null) return sliceanddice$TOOL;
+        var tool = sliceanddice$TOOL.get();
+        if (tool != null) return tool;
         return stack;
     }
 
