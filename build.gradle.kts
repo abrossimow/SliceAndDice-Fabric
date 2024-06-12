@@ -120,6 +120,7 @@ dependencies {
 }
 
 enablePublishing {
+    name.set("${mod_id}-fabric")
     githubPackages()
 }
 
