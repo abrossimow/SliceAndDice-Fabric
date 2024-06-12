@@ -254,7 +254,7 @@ class SlicerTile(type: BlockEntityType<*>, pos: BlockPos, state: BlockState) :
         }
     }
 
-    override fun getItemStorage(side: Direction): Storage<ItemVariant> {
+    override fun getItemStorage(side: Direction?): Storage<ItemVariant> {
         return itemHandler
     }
 
