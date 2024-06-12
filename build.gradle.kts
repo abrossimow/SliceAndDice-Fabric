@@ -111,9 +111,8 @@ dependencies {
 }
 
 enablePublishing {
-    repositories {
-        githubPackages(project)
-    }
+    name.set("${mod_id}-fabric")
+    githubPackages()
 }
 
 uploadToCurseforge {
