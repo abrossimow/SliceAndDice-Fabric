@@ -8,7 +8,6 @@ import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.Items
 import net.minecraft.world.item.crafting.Recipe
 import net.minecraft.world.level.ItemLike
-import vectorwing.farmersdelight.common.registry.ModItems
 import java.util.function.BiConsumer
 
 interface IRecipeInjector {
@@ -35,7 +34,7 @@ object ModCompat : IRecipeInjector {
 
     val harvesterTool
         get(): ItemStack? {
-            return ifLoaded(FARMERS_DELIGHT) { ModItems.IRON_KNIFE.get() }?.let(::ItemStack) ?: ItemStack.EMPTY
+            return ifLoaded(FARMERS_DELIGHT) { ItemsRegistry.IRON_KNIFE.get() }?.let(::ItemStack) ?: ItemStack.EMPTY
         }
 
     val exampleTool
