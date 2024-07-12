@@ -22,7 +22,7 @@ public class HarvesterMovementBehaviourMixin {
     @ModifyVariable(
             require = 0,
             method = "visitNewPosition(Lcom/simibubi/create/content/contraptions/behaviour/MovementContext;Lnet/minecraft/core/BlockPos;)V",
-            at = @At("STORE")
+            at = @At(value = "STORE", ordinal = 0)
     )
     private ItemStack overwriteDefaultItem(ItemStack stack) {
         var tool = sliceanddice$TOOL.get();

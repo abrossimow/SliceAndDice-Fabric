@@ -32,7 +32,7 @@
   ],
   "depends": {
     "fabricloader": ">=0.14",
-    "fabric": "*",
+    "fabric-api": "*",
     "minecraft": "1.20.1",
     "java": ">=17",
     "fabric-language-kotlin": "^1.9.0",
@@ -40,5 +40,8 @@
   },
   "recommends": {
     "farmersdelight": "*"
+  },
+  "breaks": {
+    "farmersdelight": "<1.20.1-2.0.0"
   }
 }
