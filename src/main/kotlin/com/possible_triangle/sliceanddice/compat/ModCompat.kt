@@ -3,6 +3,7 @@ package com.possible_triangle.sliceanddice.compat
 import com.possible_triangle.sliceanddice.SliceAndDice
 import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.Items
 import net.minecraft.world.item.crafting.Recipe
 import net.minecraft.world.level.ItemLike
@@ -30,6 +31,11 @@ object ModCompat : IRecipeInjector {
         SliceAndDice.LOGGER.info("Injecting recipes")
         FarmersDelightCompat.ifLoaded { injectRecipes(existing, add) }
     }
+
+    val harvesterTool
+        get(): ItemStack? {
+            return ifLoaded(FARMERS_DELIGHT) { ModItems.IRON_KNIFE.get() }?.let(::ItemStack) ?: ItemStack.EMPTY
+        }
 
     val exampleTool
         get(): ItemLike {
