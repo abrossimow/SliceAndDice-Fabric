@@ -12,7 +12,7 @@
 [ISSUES]: https://github.com/PssbleTrngle/SliceAndDice/issues
 
 <!-- modrinth_exclude.start -->
-# Create Slice & Dice
+# Create Slice & Dice  <img src="https://raw.githubusercontent.com/PssbleTrngle/SliceAndDice/1.19.x/src/main/resources/assets/sliceanddice/icon.png" align="right" height="128" />
 
 [Looking for the Forge version?](https://github.com/PssbleTrngle/SliceAndDice)
 
