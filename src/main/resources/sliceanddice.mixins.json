@@ -5,8 +5,8 @@
   "minVersion": "0.8",
   "refmap": "${mod_id}.refmap.json",
   "mixins": [
-    "EntityMixin", "HarvesterMovementBehaviourMixin", "LevelMixin", "RecipeEventJSMixin", "RecipeManagerAccessor",
-    "RecipeManagerMixin"
+    "EntityMixin", "HarvesterMovementBehaviourMixin", "LevelMixin", "PressingBehaviourMixin", "RecipeEventJSMixin",
+    "RecipeManagerAccessor", "RecipeManagerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
