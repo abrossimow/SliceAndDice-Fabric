@@ -63,6 +63,7 @@ class SlicerTile(type: BlockEntityType<*>, pos: BlockPos, state: BlockState) :
         get() = _heldItem
         set(value) {
             _heldItem = value
+            basinChecker.scheduleUpdate()
             itemHandler.update()
             sendData()
         }
