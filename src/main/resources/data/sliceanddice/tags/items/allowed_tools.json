@@ -5,6 +5,17 @@
       "id": "#c:tools/knives",
       "required": false
     },
-    "#minecraft:axes"
+    {
+      "id": "#c:axes",
+      "required": false
+    },
+    {
+      "id": "#c:tools/axes",
+      "required": false
+    },
+    {
+      "id": "#minecraft:axes",
+      "required": false
+    }
   ]
 }
