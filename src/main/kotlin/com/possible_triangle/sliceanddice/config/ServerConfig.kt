@@ -9,8 +9,7 @@ class ServerConfig(builder: ForgeConfigSpec.Builder) {
     val IGNORE_ROTATION = builder.define("slicer.ignore_rotation", false)
 
     val BASIN_COOKING = builder.define("basin_cooking.enabled", true)
-    //val REPLACE_FLUID_CONTAINERS = builder.define("basin_cooking.replace_fluid_containers", true)
-    val REPLACE_FLUID_CONTAINERS = Supplier { false }
+    val REPLACE_FLUID_CONTAINERS = builder.define("basin_cooking.replace_fluid_containers", true)
 
     val SPRINKLER_CAPACITY = builder.defineInRange("sprinkler.fluid_capacity", 300, 10, 2048)
     val SPRINKLER_USAGE = builder.defineInRange("sprinkler.fluid_per_use", 100, 0, 2048)
